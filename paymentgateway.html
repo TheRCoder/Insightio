@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe to Our Newsletter</title>
+    <script src="https://js.stripe.com/v3/"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .subscribe-container {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 90%;
+            max-width: 400px;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+        input[type="text"], input[type="email"], input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        #card-element {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        input[type="submit"] {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .privacy-note {
+            font-size: 12px;
+            color: #777;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="subscribe-container">
+    <h2>Subscribe to Our Newsletter</h2>
+    <form id="subscription-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="number" id="amount" placeholder="Amount ($)" required min="1">
+        
+        <label for="card-element">Credit or Debit Card</label>
+        <div id="card-element"></div>
+        <p><strong>$5/month</strong></p>
+        <button onclick="alert('Thank you for subscribing!')">Subscribe</button>
+    </form>
+    <p class="privacy-note">We respect your privacy. Your information will not be shared.</p>
+</div>
+
+<script>
+    const stripe = Stripe('YOUR_PUBLISHABLE_KEY'); // Replace with your actual public key
+    const elements = stripe.elements();
+    const cardElement = elements.create('card');
+    cardElement.mount('#card-element');
+
+    const form = document.getElementById('subscription-form');
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault();
+
+        const { paymentMethod, error } = await stripe.createPaymentMethod({
+            type: 'card',
+            card: cardElement,
+            billing_details: {
+                email: document.getElementById('email').value,
+                name: document.getElementById('name').value,
+            },
+        });
+
+        if (error) {
+            console.error(error);
+            alert('Payment failed: ' + error.message);
+        } else {
+            // Here you would typically send the paymentMethod.id to your server for processing
+            console.log('Payment successful:', paymentMethod.id);
+            alert('Payment successful! Thank you for subscribing.');
+        }
+    });
+</script>
+
+</body>
+</html>

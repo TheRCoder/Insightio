@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Our Newsletter</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Optional: Link to an external CSS file for styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }
+        .container {
+            width: 95%;
+            margin: auto;
+            background: #f4f4f4;
+            padding: 30px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            margin-top: 20px;
+            text-align: center;
+            font-style: oblique;
+            font-family: serif;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #38183c;
+        }
+        p {
+            line-height: 1.6;
+            margin: 15px 0;
+        }
+        .team {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        .team-member {
+            text-align: center;
+            width: 30%;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+        .call-to-action {
+            text-align: center;
+            margin-top: 30px;
+            background: rgb(193, 168, 226);
+            padding: 15px;
+            color: white;
+            border-radius: 5px;
+        }
+        .call-to-action a {
+            color: rgb(46, 24, 60);
+            text-decoration: none;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>About Us</h1>
+    <textarea id="message" name="message" rows="15" cols="75" required >Enter the text</textarea>
+    
+    <h2>Our Mission</h2>
+    <textarea id="message" name="message" rows="15" cols="75" required>Enter the text</textarea>
+    
+    <h2>Our Vision</h2>
+    <textarea id="message" name="message" rows="15" cols="75" required>Enter the text</textarea>
+    
+    <h2>Meet the Team</h2>
+    <div class="team">
+        <div class="team-member">
+            <input type="file" id="team-member" name="team-member" accept="image/png,image/jpeg"><br><br>
+            <textarea name="member name1" id="name1"> Enter Name</textarea><br><br>
+            <textarea name="designation" id="position">Enter Designation</textarea>
+        </div>
+        <div class="team-member">
+            <input type="file" id="team-member2" name="team-member2" accept="image/png,image/jpeg">  <br><br>
+            <textarea name="member name2" id="name2"> Enter Name</textarea><br><br>
+            <textarea name="designation" id="position">Enter Designation</textarea>
+        </div>
+        <div class="team-member">
+            <input type="file" id="team-member3" name="team-member3" accept="image/png,image/jpeg"><br><br>
+            <textarea name="member name3" id="name3"> Enter Name</textarea><br><br>
+            <textarea name="designation" id="position">Enter Designation</textarea>
+        </div>
+    </div>
+    
+    <div class="call-to-action">
+        <h2>Join Our Newsletter!</h2>
+        <p>Stay updated with our latest news and insights. Subscribe now!</p>
+        <a href="paymentgateway.html"><u>Subscribe Here</u></a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="download.png" type="image/icon">
+    <title>Insightio</title>
+    <style type="text/css">
+        * {
+            text-decoration: none;
+            text-align: center;
+            font-style: oblique;
+        
+            font-family: serif;
+        }
+        .navbar {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        .navdiv {
+            display: grid;
+        }
+        li {
+            list-style: none; 
+            display: inline-block;
+        }
+        li a {
+            color: rgb(44, 5, 96); 
+            font-size: 15px; 
+            font-weight: 500; 
+            margin-right: 25px;
+        }
+        button {
+            background-color: rgb(227, 229, 231); 
+            margin-left: 10px;
+            border-radius: 10px; 
+            padding: 10px; 
+            width: 85px;
+        }
+        button a {
+            display: inline-block;
+            color: rgb(44, 5, 96);
+            font-weight: bold;
+            font-size: 13px;
+            text-align: center;
+            text-decoration: none;
+        }
+        button {
+             cursor: pointer;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-image: url(); 
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            height: 100vh;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        
+        }
+        nav ul li {
+         
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #3d1e3f;
+            text-decoration: none;
+            font-size: x-large;
+            font-weight: bolder;
+        }
+        .hero {
+            background: #c9b4f3;
+            padding: 20px;
+            text-align: center;
+        }
+        section {
+            font-size: large;
+            padding: 60px 20px;
+            margin: 20px auto;
+            width: ;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+             }
+
+        section h2 {
+            color: #333;
+            margin-bottom: 20px;
+             }
+        
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: auto;
+}
+
+form label {
+    margin-bottom: 5px;
+    color: #333;
+    text-align: left;
+}
+
+form input, form textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    padding: 10px 20px;
+    background: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #2d1931;
+}
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #602b6b;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        section {
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+        }
+        footer {
+            text-align: center;
+            padding: 10px 0;
+            background: #c9b4f3;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+   <nav class="navbar">
+    <div class="navdiv">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="editions.html">Past Editions</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <button><a href="signup.html">Sign Up</a></button>
+            <button><a href="signin.html">Sign In</a></button>
+
+        </ul>
+    </div>
+   </nav>
+
+<main>
+    <section id="home" class="hero">
+        <h2>Welcome to My Website</h2>
+        <p>Your one-stop solution for all your needs.</p>
+        <a href="#services" class="cta-button">Explore Services</a>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are dedicated to providing the best services to our customers. Our team is skilled and experienced in various fields.</p>
+    </section>
+
+    <section id="services">
+        <h2>Our Services</h2>
+        <ul>
+            <li>
+                <h3>Weekly Updates</h3>
+                <p>Receive weekly updates on the latest trends and news directly to your inbox.</p>
+            </li>
+            <br>
+            <li>
+                <h3>Exclusive Content</h3>
+                <p>Get access to exclusive articles, tips, and resources not available on our website.</p>
+            </li>
+            <br>
+            <li>
+                <h3>Personalized Recommendations</h3>
+                <p>Based on your preferences, we provide personalized content recommendations to enhance your experience.</p>
+            </li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feel free to reach out!</p>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2024 <b>Insightio</b> All rights reserved.</p>
+</footer>
+</body>
+</html>
